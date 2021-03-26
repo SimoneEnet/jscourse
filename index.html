@@ -2,5 +2,18 @@
   <script type="text/javascript" src="esterno.js"></script>
 </head>
 <body>
-  Hello World!
+  <div id="carList">
+    <div class = "car">
+
+    </div>
+  </div>
+
+  <form action="/action_page.php">
+    <label for="carModel">CarModel:</label><br>
+    <input type="text" id="carModel" name="carModel" value=""><br>
+    <label for="CarColor">CarColor:</label><br>
+    <input type="text" id="carColor" name="carColor" value=""><br>
+  </form> 
+
+    <button  type="submit" onclick="addCar()">Click me!</button>
 </body>
