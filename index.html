@@ -2,18 +2,13 @@
 	<script type="text/javascript" src="esterno.js"></script>
 </head>
 <body>
-	<!-- Apertura Header -->
-	<header>
-		<h1>Esercizio Javascript</h1>
-	</header>
-	<!-- Chiusura Header -->
-	<div id="auto">
-		<p>Auto 1</p>
-	</div>
-	<div id="auto">
-		<p>Auto 2</p>
-	</div>
+	<div id="carList"></div>
 
-	<button onclick="aggiungiAuto()">Aggiungi autovettura</button>
-	<div id="Auto"></div>
+	<label for="marca">marca:</label>
+	<input type="text" id="marca" name="marca" value="" /><br />
+	<label for="carModel">CarModel:</label>
+	<input type="text" id="carModel" name="carModel" value="" /><br />
+	<label for="CarColor">CarColor:</label>
+	<input type="text" id="carColor" name="carColor" value="" /><br />
+	<button type="submit" onclick="addCar()">Add Car</button>
 </body>
