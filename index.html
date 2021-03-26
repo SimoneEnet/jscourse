@@ -2,18 +2,13 @@
   <script type="text/javascript" src="esterno.js"></script>
 </head>
 <body>
-  <div id="carList">
-    <div class = "car">
+  <div id="carList"></div>
 
-    </div>
-  </div>
-
-  <form action="/action_page.php">
-    <label for="carModel">CarModel:</label><br>
-    <input type="text" id="carModel" name="carModel" value=""><br>
-    <label for="CarColor">CarColor:</label><br>
-    <input type="text" id="carColor" name="carColor" value=""><br>
-  </form> 
-
-    <button  type="submit" onclick="addCar()">Click me!</button>
+  <label for="marca">marca:</label>
+  <input type="text" id="marca" name="marca" value="" /><br />
+  <label for="carModel">CarModel:</label>
+  <input type="text" id="carModel" name="carModel" value="" /><br />
+  <label for="CarColor">CarColor:</label>
+  <input type="text" id="carColor" name="carColor" value="" /><br />
+  <button type="submit" onclick="addCar()">Add Car</button>
 </body>
