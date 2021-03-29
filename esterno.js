@@ -1,4 +1,5 @@
 "use strict";
+//.ok;
 var a = { value: 1 };
 var b = "ciao" + " " + "ok";
 
