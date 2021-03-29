@@ -1,12 +1,28 @@
 "use strict";
+// ok
+import Car from "car";
 
-function Car(m, mm, c) {
-  this.marca = m;
-  this.modello = mm;
-  this.colore = c;
-}
+var ita = new Map().set("car", "auto");
+var eng = new Map().set("car", "car");
 
-var cars = [];
+var a = 1;
+
+var cars = [
+  new Car(
+    "qwe1",
+    navigator.language === "it" ? ita.get("car") : eng.get("car"),
+    "123"
+  ),
+  new Car("qwe" + a + "2", "qwe", "123"),
+  new Car(
+    `qw
+asd
+asd
+  e${a + 2}3`,
+    "qwe",
+    "123"
+  ),
+];
 
 function addCar() {
   var marca = document.getElementById("marca").value;
@@ -19,6 +35,7 @@ function addCar() {
 }
 
 function createCarList() {
+  console.log(cars);
   var carlist = document.getElementById("carList");
 
   carlist.innerHTML = "";
@@ -51,3 +68,14 @@ function createCarList() {
     carlist.appendChild(block_to_insert);
   }
 }
+
+/*
+  fare FizzBuzz
+  creare una funzione fizzBuzz che una volta chiamata stampi a console numeri da 1 a 100
+  ma con Fizz al posto dei numeri multipli di 3
+  Buzz al posto dei numeri multipli di 5
+  e FizzBuzz al posto dei numeri multipli di entrambi
+
+  ie:
+  fizzBuzz(); // 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz
+*/
