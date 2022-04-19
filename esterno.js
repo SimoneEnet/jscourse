@@ -1,20 +1,19 @@
 "use strict";
-// ok
-import Car from "car";
+import * as car from "./car.js";
 
-var ita = new Map().set("car", "auto");
-var eng = new Map().set("car", "car");
+let ita = new Map().set("carName", "auto");
+let eng = new Map().set("carName", "car");
 
-var a = 1;
+let a = 1;
 
-var cars = [
-  new Car(
+let cars = [
+  new car.Car(
     "qwe1",
-    navigator.language === "it" ? ita.get("car") : eng.get("car"),
+    navigator.language === "it" ? ita.get("carName") : eng.get("carName"),
     "123"
   ),
-  new Car("qwe" + a + "2", "qwe", "123"),
-  new Car(
+  new car.Car("qwe" + a + "2", "qwe", "123"),
+  new car.Car(
     `qw
 asd
 asd
@@ -25,49 +24,52 @@ asd
 ];
 
 function addCar() {
-  var marca = document.getElementById("marca").value;
-  var modelloMacchina = document.getElementById("carModel").value;
-  var coloreMacchina = document.getElementById("carColor").value;
-  var car = new Car(marca, modelloMacchina, coloreMacchina);
-  cars.push(car);
+  let marca = document.getElementById("marca").value;
+  let modelloMacchina = document.getElementById("carModel").value;
+  let coloreMacchina = document.getElementById("carColor").value;
+  let newCar = new car.Car(marca, modelloMacchina, coloreMacchina);
+  cars.push(newCar);
 
   createCarList();
 }
 
 function createCarList() {
   console.log(cars);
-  var carlist = document.getElementById("carList");
+  let carlist = document.getElementById("carList");
 
   carlist.innerHTML = "";
 
-  for (let i = 0; i < cars.length; i++) {
-    var block_to_insert = document.createElement("div");
-    var title = document.createElement("h1");
+  cars.forEach((c, i) => {
+    let block_to_insert = document.createElement("div");
+    let title = document.createElement("h1");
     title.innerHTML = "Element " + i;
     block_to_insert.appendChild(title);
     block_to_insert.appendChild(
-      document.createTextNode("marca: " + cars[i].marca)
+      document.createTextNode("marca: " + c.marca)
     );
     block_to_insert.appendChild(document.createElement("br"));
     block_to_insert.appendChild(
-      document.createTextNode("modello: " + cars[i].modello)
+      document.createTextNode("modello: " + c.modello)
     );
     block_to_insert.appendChild(document.createElement("br"));
     block_to_insert.appendChild(
-      document.createTextNode("colore: " + cars[i].colore)
+      document.createTextNode("colore: " + c.colore)
     );
     block_to_insert.appendChild(document.createElement("br"));
-    var button = document.createElement("button");
+    let button = document.createElement("button");
     button.innerHTML = "Delete";
-    button.onclick = function () {
+    button.onclick = () => {
       cars.splice(i, 1);
       createCarList();
     };
     block_to_insert.appendChild(button);
     block_to_insert.appendChild(document.createElement("hr"));
     carlist.appendChild(block_to_insert);
-  }
+  });
 }
+
+window.createCarList = createCarList;
+window.addCar = addCar;
 
 /*
   fare FizzBuzz

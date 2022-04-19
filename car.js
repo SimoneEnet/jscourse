@@ -1,6 +1,6 @@
-import Vehicle from "vehicle";
+import * as vh from "./vehicle.js";
 
-export class Car extends Vehicle {
+export class Car extends vh.Vehicle {
   constructor(m, mm, c) {
     super(m);
     this.modello = mm;
