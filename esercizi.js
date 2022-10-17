@@ -65,3 +65,18 @@ let usersMapped = users.map(u=>{return {fullName: u.name+" "+u.surname, id: u.id
 
 console.log(usersMapped[0].id ); // 1 
 console.log(usersMapped[0].fullName ); // John Smith
+
+let james = { name: "James", age: 25 }; 
+let nik = { name: "Nik", age: 30 }; 
+let lucy = { name: "Lucy", age: 28 }; 
+
+let array = [ james, nik, lucy ]; 
+sortByAge(array); 
+// now: [john, mary, pete] 
+console.log(array[0].name); // John 
+console.log(array[1].name); // Mary 
+console.log(array[2].name); // Pete
+
+function sortByAge(array){
+    array.sort((a,b)=>a.age>b.age?1:-1);
+}
