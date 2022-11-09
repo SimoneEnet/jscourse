@@ -6,4 +6,5 @@ function myFunction() {
   var c = a;
   console.log("ciao");
   console.log(JSON.stringify(c));
+  console.log(JSON.stringify(a));
 }
